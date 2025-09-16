@@ -16,7 +16,6 @@ namespace TP1_ComB_Grupo4
             Console.WriteLine("--- --- ---");
             laBiblioteca.listarLibros();
 
-
             void cargarLibros(int cantidad)
             {
                 bool pude;
