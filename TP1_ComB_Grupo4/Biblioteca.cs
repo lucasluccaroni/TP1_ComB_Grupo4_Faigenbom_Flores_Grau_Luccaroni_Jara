@@ -20,11 +20,11 @@ namespace TP1_ComB_Grupo4
         {
             Libro libroBuscado = null;
             int i = 0;
-            while(i < libros.Count && !libros[i].Titulo.Equals(titulo))
+            while (i < libros.Count && !libros[i].Titulo.Equals(titulo))
             {
                 i++;
             }
-            if(i != libros.Count)
+            if (i != libros.Count)
             {
                 libroBuscado = libros[i];
             }
@@ -47,7 +47,7 @@ namespace TP1_ComB_Grupo4
 
         public void listarLibros()
         {
-            foreach(var libro in libros)
+            foreach (var libro in libros)
             {
                 Console.WriteLine(libro);
             }
@@ -58,7 +58,7 @@ namespace TP1_ComB_Grupo4
             bool resultado = false;
             Libro libroAEliminar = null;
             libroAEliminar = buscarLibro(titulo);
-            if(libroAEliminar != null)
+            if (libroAEliminar != null)
             {
                 libros.Remove(libroAEliminar);
                 resultado = true;
@@ -70,22 +70,22 @@ namespace TP1_ComB_Grupo4
         {
             Lector lectorBuscado = null;
             int i = 0;
-            while(i < lectores.Count && !lectores[i].Dni.Equals(dni))
+            while (i < lectores.Count && !lectores[i].Dni.Equals(dni))
             {
                 i++;
             }
-            if(i != lectores.Count)
+            if (i != lectores.Count)
             {
                 lectorBuscado = lectores[i];
             }
             return lectorBuscado;
         }
-        
+
         public bool altaLector(string nombre, string apellido, int dni)
         {
             bool resultado = false;
             Lector lector = this.buscarLector(dni);
-            if(lector == null)
+            if (lector == null)
             {
                 lector = new Lector(nombre, apellido, dni);
                 lectores.Add(lector);
@@ -95,7 +95,7 @@ namespace TP1_ComB_Grupo4
         }
 
         public string prestarLibro(string titulo, int dni)
-        {   
+        {
             string resultado = null;
             string libroInexistente = "LIBRO INEXISTENTE.";
             string lectorInexistente = "LECTOR INEXISTENTE.";
@@ -114,14 +114,14 @@ namespace TP1_ComB_Grupo4
 
             // buscamos el lector
             lectorAPrestamo = buscarLector(dni);
-            if(lectorAPrestamo == null)
+            if (lectorAPrestamo == null)
             {
                 resultado = lectorInexistente;
                 return resultado;
             }
 
             // Si existe el lector y el libro chequeamos la cantidad de prestamos del lector
-            if((resultado != libroInexistente) && (resultado != lectorInexistente))
+            if ((resultado != libroInexistente) && (resultado != lectorInexistente))
             {
                 bool chequeoPrestamosDisponibles = lectorAPrestamo.prestamoDisponible();
                 if (!chequeoPrestamosDisponibles)

@@ -37,14 +37,7 @@ namespace TP1_ComB_Grupo4
 
         public bool prestamoDisponible()
         {
-            bool resultado = false;
-            int cantidadDisponible;
-            cantidadDisponible = this.limitePrestamos - this.nroPrestamos;
-            if((cantidadDisponible > 0) && (cantidadDisponible <= 3))
-            {
-                resultado = true;
-            }
-            return resultado;
+            return this.nroPrestamos < this.limitePrestamos;
         }
 
         public void añadirPrestamo(Libro libro)
