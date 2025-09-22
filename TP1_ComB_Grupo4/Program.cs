@@ -7,22 +7,23 @@ namespace TP1_ComB_Grupo4
         static void Main(string[] args)
         {
             Biblioteca laBiblioteca = new Biblioteca();
+
+            Console.WriteLine("--- Cargamos 10 libros en la biblioteca ---");
             cargarLibros(10);
-            Console.WriteLine("--- --- ---");
+            Console.WriteLine("\n--- Intentamos cargar dos libros ya existentes ---");
             cargarLibros(2);
-            Console.WriteLine("--- --- ---");
+            Console.WriteLine("\n--- Listamos los libros cargados ---");
             laBiblioteca.listarLibros();
             laBiblioteca.eliminarLibro("Titulo5");
-            Console.WriteLine("--- --- ---");
+            Console.WriteLine("\n--- Listamos nuevamente los libros luego haber eliminado el Titulo5 ---");
             laBiblioteca.listarLibros();
 
-            Console.WriteLine("--- --- ---");
-            Console.WriteLine("--- --- ---");
-            Console.WriteLine("--- --- ---");
-            Console.WriteLine("--- --- ---");
+            Console.WriteLine("\n--- Cargamos 5 lectores ---");
             cargarLectores(5);
+            Console.WriteLine("\n--- Intentamos cargar dos lectores ya existentes ---");
             cargarLectores(2);
 
+            Console.WriteLine("\n--- Prestamos ---");
             // Caso exitoso 1, usuario 4
             string prestamoUno = laBiblioteca.prestarLibro("Titulo9", 4);
             Console.WriteLine(prestamoUno);
@@ -47,9 +48,7 @@ namespace TP1_ComB_Grupo4
             string prestamoSeis = laBiblioteca.prestarLibro("Titulo6", 4);
             Console.WriteLine(prestamoSeis);
 
-            Console.WriteLine("--- --- ---");
-            Console.WriteLine("--- --- ---");
-
+            Console.WriteLine("\n--- Listamos nuevamente los libros que quedan en la biblioteca ---");
             laBiblioteca.listarLibros();
 
 
